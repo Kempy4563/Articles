@@ -1,12 +1,7 @@
+{% extends "app/base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Update Article</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+{% block content %}
+
 <h1>Delete Article</h1>
 <p>Are you sure you want to delete this article?</p>
 <form method="POST">
@@ -14,5 +9,6 @@
     <button type="submit">Delete</button>
 </form>
 
-</body>
-</html>
+<a href="{% url 'home' %}">No, Take me back</a>
+
+{% endblock content %}

@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Articles</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+{% extends "app/base.html" %}
+
+{% block content %}
 <h1>Articles</h1>
+
+<a href="{% url 'create_article' %}">Create Article</a>
+
+
 <ul>
     {% for article in articles %}
-    <li>{{ article.title }} with {{ article.word_count }} words </li>
+    <li><a href="{% url 'update_article' article.id %}">{{ article.title }}</a> with {{ article.word_count }} words </li>
     <li>{{ article.content }} </li>
     <li>{{ article.status }} </li>
     <li>{{ article.created_at }} </li>
@@ -17,5 +16,5 @@
 
     {% endfor %}
 </ul>
-</body>
-</html>
+
+{% endblock content %}
